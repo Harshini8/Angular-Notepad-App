@@ -1,0 +1,82 @@
+<div style="border:2px solid Black;margin: 20px;padding: 50px;">
+<h2 mat-dialog-title *ngIf=!state>Edit Note <button (click)="back()" style="float:right;">Back</button></h2>
+<h2 mat-dialog-title *ngIf=state>Add Note <button (click)="back()" style="float:right;">Back</button></h2>
+<mat-dialog-content>
+    <form>
+        <div class="form-group">
+            <label for="notetitle" class="icon-button">
+        <i class="material-icons">title</i></label>
+        <input type="text" [(ngModel)]="title"
+        id="notetitle"
+        name="notetitle"
+        placeholder="Note title goes here..." 
+        required="required"
+        maxlength="100" 
+        class="form-group-input"
+        value={{title}} >
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="noteContent" class="icon-button">
+            <i class="material-icons">notes</i>
+        </label>
+        <textarea
+               [(ngModel)]="body"
+               id="noteContent"
+               name="noteContent"
+               placeholder="Enter your contents"
+               maxlength="750"
+               required="required"
+               class="form-group-input"
+               style="min-height: 150px;"></textarea>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="selectCat" class="icon-button">
+            <i class="material-icons">label</i>
+        </label>
+        <select class="form-group-input" required="required" name="selectCat" [(ngModel)]="categories">
+            <option  disabled="disabled" selected="selected">Choose a tag</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+    <hr>
+    <br>
+    <div style="text-align: center;" *ngIf=!state>
+        <button type="button" style="color: red;
+                              outline: none;
+                              border:none;
+                              padding:0 50px;
+                              background-color: transparent;"
+                              (click)="onCancel()"
+                              >Cancel</button>
+        <button type="submit" style="color: green;
+                              outline: none;
+                              border: none;
+                              padding:0 50px;
+                              background-color: transparent;"
+                              (click)="onSavebutton()"
+                              >Save</button>
+    </div>
+    <div style="text-align: center;" *ngIf="state">
+        <button type="button" style="color: red;
+                              outline: none;
+                              border:none;
+                              padding:0 50px;
+                              background-color: transparent;"
+                              (click)="onCancel()"
+                              >Cancel</button>
+        <button type="submit" style="color: green;
+                              outline: none;
+                              border: none;
+                              padding:0 50px;
+                              background-color: transparent;"
+                              (click)="onAdd()"
+                              >Add</button>
+    </div>
+    </form>
+</mat-dialog-content>
+</div>

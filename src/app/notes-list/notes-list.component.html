@@ -1,0 +1,21 @@
+<div *ngFor="let note of notes; let id=index" >
+    <mat-card id="trunc2" style="width:40%; float: left;margin:30px;height:150px;" 
+    [ngStyle]="{'background-color':note.color}" (click)="fullCard(id)">
+      <mat-card-subtitle>{{note.categories}}</mat-card-subtitle>
+      <mat-card-title>{{note.title}}
+        <button mat-icon-button color="warn" style="float:right;" (click)="onDelete(note.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" style="float:right;" (click)="openEdit(note.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-card-title>
+      <div class="trunc1">
+        {{note.body}}
+      </div>
+      <footer style="position: absolute;bottom:0;left:10;margin-bottom: 5px;">{{note.modifiedDate | date:'MMM dd,y hh:mm a'}}</footer>
+    </mat-card>
+  </div>
+  <aside style="float: right;right: 0;bottom: 0;margin:5px 40px;">
+    <button mat-fab style="font-size:30px;" color="primary" (click)="openAdd()">+</button>
+  </aside>

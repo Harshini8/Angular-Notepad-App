@@ -1,0 +1,21 @@
+input {
+    outline: none;
+    caret-color: blue;
+}
+.form-group-input {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    flex: 1;
+    font-size: 16px;
+    padding: 0 4px;
+}
+.form-group {
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    padding: 5px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: royalblue;
+}

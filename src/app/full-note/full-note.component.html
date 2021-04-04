@@ -1,0 +1,12 @@
+<div>
+    <mat-card  style="width:400px;height: 400px;" 
+    [ngStyle]="{'background-color':color}">
+      <mat-card-subtitle>{{categories}}</mat-card-subtitle>
+      <mat-card-title>{{title}}
+      </mat-card-title>
+      <div>
+        {{body}}
+      </div>
+      <footer style="position: absolute;bottom:0;left:10;margin-bottom: 5px;">{{modifiedDate | date:'MMM dd,y hh:mm a'}}</footer>
+    </mat-card>
+  </div>
